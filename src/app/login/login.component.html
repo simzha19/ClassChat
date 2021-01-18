@@ -1,0 +1,16 @@
+<div class="container">
+  <form class="example-form" [formGroup]="loginForm" (ngSubmit)="onFormSubmit(loginForm.value)">
+      <h2>Please login using your nickname</h2>
+      <mat-form-field class="example-full-width">
+        <mat-label>Nickname</mat-label>
+        <input matInput placeholder="Enter your nickname" formControlName="nickname"
+                [errorStateMatcher]="matcher">
+        <mat-error>
+          <span *ngIf="!loginForm.get('nickname').valid && loginForm.get('nickname').touched">Please enter your nickname</span>
+        </mat-error>
+      </mat-form-field>
+      <div class="button-row">
+          <button mat-raised-button type="submit" [disabled]="!loginForm.valid" color="primary">Login</button>
+      </div>
+  </form>
+</div>

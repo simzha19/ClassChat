@@ -1,0 +1,18 @@
+<div class="example-container mat-elevation-z8">
+  <h3>{{nickname}} <button mat-raised-button color="primary" (click)="logout()">Logout</button></h3>
+  <h2>Room List</h2>
+  <div class="example-loading-shade"
+       *ngIf="isLoadingResults">
+    <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+  </div>
+  <div class="button-row">
+    <button mat-raised-button color="primary" [routerLink]="['/addroom']">Create a room</button>
+  </div>
+  <form class="example-form">
+    <mat-form-field class="example-full-width">
+      <mat-label>Enter room ID</mat-label>
+      <input id="roomInput" matInput placeholder="Enter classroom ID" >
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="onKey($event)">Enter</button>
+  </form>
+</div>
